@@ -1,37 +1,22 @@
-Projektarbeit Spiel "DOBBLE"
+Project work: Game "DOBBLE"
 ============================
 
 Name:           Michael Jost (https://github.com/michajost)
-Testdatum:      02.01.2024
-Abgabedatum:    05.01.2024
-
 Online:         https://mjpro.de/dobble/
 
 
-Spielbeschreibung
+Game description
 -----------------
 
-Bei DOBBLE gibt es grundsätzlich zwei Arten von Karten. Eine in der "Mitte" und eine "auf der Hand". Jede Karte hat 8 Symbole, von denen immer genau eines auf einer beliebigen anderen Karte zu finden ist. Sinn des Spieles ist es möglichst schnell das einzige Symbol zu finden, dass sowohl auf der Hand-, als auch auf der Mittel-Karte zu finden ist. 
+There are basically two types of cards in DOBBLE. One in the "middle" and one "on hand". Each card has 8 symbols, of which exactly one can always be found on any other card. The purpose of the game is to find the only symbol that can be found on both the hand and the middle card as quickly as possible.
 
-DOBBLE wird normalerweise mit mehreren Personen gespielt. Um es auch für Einzelspieler spannend zu machen, habe ich eine Zeitbegrenzung (z.B. 60 Sekunden) eingebaut, innerhalb derer möglichst viele Symbolübereinstimmungen gefunden werden müssen. Das Ergebnis wird als Highscore gespeichert, der dann "geknackt" werden kann.
+DOBBLE is usually played with several people. To make it exciting for single players, I have installed a time limit (e.g. 60 seconds) within which as many symbol matches as possible must be found. The result is saved as a high score.
 
-Spielrunde
+Game round
 ----------
+When you click on “Runde starten” two random cards are displayed and the countdown begins. If a match has been found, the symbol in the lower area must be clicked. If it is correct, the counter goes up and two new cards are dealt. If you click incorrectly, there is a time penalty (e.g. 1.3 seconds) during which no symbol can be selected. After the time has elapsed, a message will be displayed asking whether the high score has been cracked.
 
-Bei Klick auf "Runde starten" werden zwei zufällige Karten angezeigt und der Countdown beginnt. Ist eine Übereinstimmung gefunden worden, muss das Symbol im unteren Bereich angeklickt werden. Ist es richtig, geht der Zähler hoch und es werden zwei neue Karten ausgegeben. Wurde falsch geklickt, gibt es eine Zeitstrafe (z.B. 1,3 Sekunden), in der kein Symbol ausgewählt werden kann. Nach Ablauf der Zeit wird eine Nachricht angezeigt, ob der Highscore geknackt wurde.
-
-Projektarbeit Anforderungen
+Project
 ---------------------------
 
-Arbeit mit Events:
-    onload-Event beim Request
-    onclick-Events Start-Button und auf Symbolen in der unteren Karte
-
-Nutzung von Webstorage oder Cookies
-    Der Highscore wird von/im localStorage ausgelesen/gespeichert
-
-Erzeugung und Integration von DOM-Teilbäumen
-    z.B. in Funktion getCard() - Hier werden die Karten mit Symbolen gefüllt und ausgegeben
-
-AJAX
-    Die Symbole und Karten werden mit AJAX aus der cards.json gezogen
+This game was a practice project for my JS training in Dec. 2023.
