@@ -1,6 +1,6 @@
 "use strict";
 const SETTINGS = {
-    sec: 60,
+    sec: 60, // Time until game ends
     maxT() { return this.sec * 1000 },
     penalty: 12
 }
@@ -20,25 +20,25 @@ xhr.onload = function () {
 };
 xhr.open("GET", "./cards.json");
 xhr.responseType = "json";
-xhr.send()
+xhr.send();
 
 const initGame = function () {
     time.textContent = SETTINGS.sec + " Sekunden";
     readStorage();
     btnStart.onclick = startButtonClick;
-}
+};
 
 const readStorage = function () {
     hS = getLocStore("highScore");
     divHighScore.textContent = (hS) ? `Dein Highscore ist ${hS}` : "Du hast noch nicht gespielt.";
-}
+};
 
 const startButtonClick = function () {
     remove(document.querySelector(".gameEndMsg"));
     toggle(this, anleitung);
     gameArea.append(getProgress(0, SETTINGS.maxT()), updateCounter());
     newCards();
-    countdown()
+    countdown();
 };
 
 const getProgress = function (min, max) {
@@ -46,7 +46,7 @@ const getProgress = function (min, max) {
     progressbar.value = min;
     progressbar.max = max;
     return progressbar;
-}
+};
 
 const updateCounter = function (cnt) {
     if (!cnt) {
@@ -60,11 +60,11 @@ const updateCounter = function (cnt) {
         bInvl = setInterval(blob, 100);
         spnC.textContent = cnt;
     }
-}
+};
 
 const countdown = function () {
     cInvl = setInterval(intervalCountdown, 1000);
-}
+};
 
 const intervalCountdown = function () {
     if (timer < (SETTINGS.maxT() / 1000)) document.querySelector("progress").value = ++timer * 1000;
@@ -78,7 +78,7 @@ const newCards = function () {
     remove(document.querySelector(".showCard"), document.querySelector(".inputCard"));
     getCard("showCard", getRandomIndex());
     getCard("inputCard", getRandomIndex());
-}
+};
 
 const getRandomIndex = function () {
     let cardIndex;
@@ -89,7 +89,7 @@ const getRandomIndex = function () {
     } while (cP.indexOf(cardIndex) != -1)
     cP.push(cardIndex);
     return cardIndex;
-}
+};
 
 const getCard = function (type, index) {
     const card = cards[index];
@@ -97,7 +97,7 @@ const getCard = function (type, index) {
     cardContainer.className = type;
     for (let i = 0; i < card.length; i++) cardContainer.append(generateCard(type, card[i]));
     gameArea.append(cardContainer);
-}
+};
 
 const generateCard = function (type, cardIndex) {
     const symbolImg = document.createElement("img");
@@ -108,7 +108,7 @@ const generateCard = function (type, cardIndex) {
         symbolImg.onclick = symbolClick;
     }
     return symbolImg;
-}
+};
 
 const symbolClick = function () {
     if ((this.parentElement.className.indexOf("wrongClick") == -1)) {
@@ -123,7 +123,7 @@ const symbolClick = function () {
         }
         wrongCardPenalty();
     }
-}
+};
 
 const wrongCardPenalty = function () {
     clearInterval(pInvl);
@@ -145,7 +145,7 @@ const endGame = function () {
     const gameEndMsg = document.createElement("div");
     gameEndMsg.className = "gameEndMsg";
     if (cnt > hS) {
-        setLocStore("highScore", cnt)
+        setLocStore("highScore", cnt);
         hS = cnt;
         gameEndMsg.textContent = `Hurra! Der neue Heighscore lautet: ${hS}`;
         divHighScore.textContent = `Dein Highscore ist ${hS}`;
