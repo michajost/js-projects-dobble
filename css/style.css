@@ -1,0 +1,344 @@
+body {
+    margin:0;
+    padding:0;
+    background-color: #fff;
+    font-family: 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+    min-width: 375px;
+
+    --color-lila: #b99cf9;
+    --color-yellow: #f7e050;
+    --color-black: #000;
+
+    --shadow-default: 0px 5px 5px 5px rgba(0, 0, 0, 0.15);
+    --shadow-inverted: inset 0px 5px 5px 5px rgba(0, 0, 0, 0.15);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5px;
+
+    margin: 15px auto;
+    width: calc(100% - 40px);
+    max-width: 600px;
+    border-radius: 20px;
+    background-color: var(--color-yellow);
+    border: 5px solid var(--color-lila);
+    box-shadow: var(--shadow-default);
+}
+
+h1 {
+    text-align: center;
+    font-size: 65px;
+    text-transform: uppercase;
+    color: var(--color-lila);
+    margin: 0 0 10px;
+    text-shadow: 0px 3px 4px rgba(0,0,0,0.4);
+}
+
+progress[value] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    border: none;
+
+    background-color: #fff;
+    width: calc(100% - 100px);
+    height: 40px;
+    align-self:flex-start;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+    overflow: hidden;
+}
+
+progress[value]::-webkit-progress-bar {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+
+}
+
+progress[value]::-webkit-progress-value {
+    background-color: var(--color-lila);
+    border-radius: 2px;
+}
+
+progress[value]::-moz-progress-bar {    
+    background-color: var(--color-lila);
+    border-radius: 2px;
+}
+
+.anleitung {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 5px;
+}
+
+#highscore {    
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color: black;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px 5px 15px 15px;
+    text-align: center;
+}
+
+#game {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding-top: 10px;
+}
+
+.spanCounter {
+    text-align: center;
+    background: var(--color-lila);
+    color:#fff;
+    display: block;
+    position: absolute;
+    border-radius: 15px;
+    width: 80px;
+    line-height: 60px;
+    right: 15px;
+    top: 0px;
+    font-size: 60px;
+    font-weight: bold;
+    transform: rotate(.22rad);
+    box-shadow: var(--shadow-default);
+}
+
+.spanCounter.blob {
+    animation: .4s 1 ease blob;
+}
+
+#start {
+    background-color: var(--color-lila);
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #fff;
+    font-size: 30px;
+    border: none;
+    padding: 10px 15px;
+    width: 100%;
+    border-radius: 15px;
+    margin: 20px auto;
+    box-shadow: var(--shadow-default);
+}
+
+#start:active {
+    box-shadow: var(--shadow-inverted);
+}
+
+.showCard {
+    background-color: #fffcf4;
+    
+    width: 400px;
+    aspect-ratio: 1/1;
+
+    border-radius: 200px;
+    position: relative;
+    box-shadow: var(--shadow-default);
+    border: 5px solid #fff;
+    margin: 20px 0;
+    color: green;
+    animation: .7s 1 ease show-cards ;
+}
+
+.showCard img {
+    position: absolute;
+    height: 90px;
+    max-width: 90px;
+}
+
+.showCard img:nth-child(1) {
+    top: 59px;
+    left: 55px;
+    transform: rotate(-.41rad);
+}
+
+.showCard img:nth-child(2) {
+    top: 10px;
+    left: 155px;
+    transform: rotate(.9rad);
+}
+
+.showCard img:nth-child(3) {
+    top: 160px;
+    left: 12px;
+    transform: rotate(.41rad);
+}
+
+.showCard img:nth-child(4) {
+    top: 261px;
+    left: 80px;
+    transform: rotate(-.31rad);
+}
+
+.showCard img:nth-child(5) {
+    top: 74px;
+    left: 259px;
+    transform: rotate(.31rad);
+}
+
+.showCard img:nth-child(6) {
+    top: 182px;
+    left: 279px;
+    transform: rotate(-.21rad);
+}
+
+.showCard img:nth-child(7) {
+    top: 279px;
+    left: 194px;
+    transform: rotate(.21rad);
+}
+
+.showCard img:nth-child(8) {
+    top: 152px;
+    left: 156px;
+    transform: rotate(-.10rad);
+}
+
+
+.inputCard {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 15px;
+
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 3px solid rgba(255, 255, 255, 0.8);
+    animation: .7s 1 ease show-cards ;
+    margin-bottom: 5px;
+}
+
+.inputCard img {
+    width: calc(12.5% - 20px);
+    margin: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+
+.wrongClick {
+    border: 3px solid red;
+    cursor: not-allowed !important;
+    animation: .5s infinite ease warning;
+}
+.inputCard.wrongClick img {
+    cursor: not-allowed !important;
+}
+
+.showCard img[data-index="53"] {
+    color: greeN
+}
+
+.iconify {
+    color: greeN
+}
+
+.gameEndMsg {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    font-size: 24px;
+    margin: 25px 0 0;    
+}
+
+
+@media (max-width: 474px) {
+    main {
+        margin-top: 0;
+    }
+    h1 {
+        font-size: 45px;
+    }
+
+    .showCard {    
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        border-radius: 30px;
+        height: auto;
+        width: calc(100% - 30px);  
+        aspect-ratio: unset;
+        row-gap: 20px;
+        column-gap: 5px;
+        padding: 15px 10px;
+        margin-top:30px;
+
+    }
+
+    .showCard img {
+        position: relative;
+        top: unset !important;
+        left:unset !important;
+        width: calc(25% - 10px);
+        height: auto;
+        transform: none !important;
+    }
+    .inputCard {
+        column-gap: 20px;
+    }
+
+    .inputCard img {
+        height: auto;
+        width: calc(25% - 40px);
+    }
+}
+
+@media (max-width: 385px) {
+    h1 {
+        font-size: 35px;
+    }
+}
+
+
+@keyframes show-cards {
+    from {
+        opacity: 0;
+    }
+  
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes warning {
+    0% {
+        background-color: rgba(255, 0, 0, 0.2);
+    }
+  
+    50% {
+        background-color: rgba(255, 0, 0, 1);
+    }
+    
+    100% {
+        background-color: rgba(255, 0, 0, 0.2);
+    }
+  
+}
+
+@keyframes blob {
+    0% {
+        transform: scale(1) rotate(.22rad);
+    }
+  
+    50% {
+        transform: scale(1.5) rotate(-.12rad);
+    }
+    
+    100% {
+        transform: scale(1) rotate(.22rad);
+    }
+  
+}
