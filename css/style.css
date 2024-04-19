@@ -1,6 +1,6 @@
 body {
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
     background-color: #fff;
     font-family: 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 15px;
@@ -35,7 +35,7 @@ h1 {
     text-transform: uppercase;
     color: var(--color-lila);
     margin: 0 0 10px;
-    text-shadow: 0px 3px 4px rgba(0,0,0,0.4);
+    text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.4);
 }
 
 progress[value] {
@@ -48,7 +48,7 @@ progress[value] {
     background-color: #fff;
     width: calc(100% - 100px);
     height: 40px;
-    align-self:flex-start;
+    align-self: flex-start;
     border-radius: 15px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
     overflow: hidden;
@@ -66,21 +66,21 @@ progress[value]::-webkit-progress-value {
     border-radius: 2px;
 }
 
-progress[value]::-moz-progress-bar {    
+progress[value]::-moz-progress-bar {
     background-color: var(--color-lila);
     border-radius: 2px;
 }
 
 .anleitung {
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 15px;
     padding: 5px;
 }
 
-#highscore {    
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+#highscore {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: black;
     color: #fff;
     padding: 10px 15px;
@@ -101,7 +101,7 @@ progress[value]::-moz-progress-bar {
 .spanCounter {
     text-align: center;
     background: var(--color-lila);
-    color:#fff;
+    color: #fff;
     display: block;
     position: absolute;
     border-radius: 15px;
@@ -139,7 +139,7 @@ progress[value]::-moz-progress-bar {
 
 .showCard {
     background-color: #fffcf4;
-    
+
     width: 400px;
     aspect-ratio: 1/1;
 
@@ -149,7 +149,7 @@ progress[value]::-moz-progress-bar {
     border: 5px solid #fff;
     margin: 20px 0;
     color: green;
-    animation: .7s 1 ease show-cards ;
+    animation: .7s 1 ease show-cards;
 }
 
 .showCard img {
@@ -216,7 +216,7 @@ progress[value]::-moz-progress-bar {
 
     background-color: rgba(255, 255, 255, 0.8);
     border: 3px solid rgba(255, 255, 255, 0.8);
-    animation: .7s 1 ease show-cards ;
+    animation: .7s 1 ease show-cards;
     margin-bottom: 5px;
 }
 
@@ -233,6 +233,7 @@ progress[value]::-moz-progress-bar {
     cursor: not-allowed !important;
     animation: .5s infinite ease warning;
 }
+
 .inputCard.wrongClick img {
     cursor: not-allowed !important;
 }
@@ -246,45 +247,48 @@ progress[value]::-moz-progress-bar {
 }
 
 .gameEndMsg {
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     font-size: 24px;
-    margin: 25px 0 0;    
+    margin: 25px 0 0;
 }
 
 
 @media (max-width: 474px) {
+    
     main {
         margin-top: 0;
     }
+
     h1 {
         font-size: 45px;
     }
 
-    .showCard {    
+    .showCard {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-around;
         border-radius: 30px;
         height: auto;
-        width: calc(100% - 30px);  
+        width: calc(100% - 30px);
         aspect-ratio: unset;
         row-gap: 20px;
         column-gap: 5px;
         padding: 15px 10px;
-        margin-top:30px;
+        margin-top: 30px;
 
     }
 
     .showCard img {
         position: relative;
         top: unset !important;
-        left:unset !important;
+        left: unset !important;
         width: calc(25% - 10px);
         height: auto;
         transform: none !important;
     }
+
     .inputCard {
         column-gap: 20px;
     }
@@ -306,7 +310,7 @@ progress[value]::-moz-progress-bar {
     from {
         opacity: 0;
     }
-  
+
     to {
         opacity: 1;
     }
@@ -317,28 +321,28 @@ progress[value]::-moz-progress-bar {
     0% {
         background-color: rgba(255, 0, 0, 0.2);
     }
-  
+
     50% {
         background-color: rgba(255, 0, 0, 1);
     }
-    
+
     100% {
         background-color: rgba(255, 0, 0, 0.2);
     }
-  
+
 }
 
 @keyframes blob {
     0% {
         transform: scale(1) rotate(.22rad);
     }
-  
+
     50% {
         transform: scale(1.5) rotate(-.12rad);
     }
-    
+
     100% {
         transform: scale(1) rotate(.22rad);
     }
-  
+
 }
