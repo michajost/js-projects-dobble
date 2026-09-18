@@ -2,7 +2,7 @@ Project work: Game "DOBBLE"
 ============================
 
 Name:           Michael Jost (https://github.com/michajost)
-Online:         https://mjpro.de/dobble/
+Online:         [dobble.mjpro.de](https://dobble.mjpro.de/)
 
 
 Game description
